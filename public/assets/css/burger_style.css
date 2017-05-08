@@ -1,0 +1,14 @@
+.jumbotron{
+	margin-top: 1px;
+	color: blue;
+	background-color: red;
+	opacity: .75;
+}
+
+body {
+
+	background-image: url("../images/burger.png");
+	background-repeat: no-repeat;
+	background-size:cover;
+	opacity: .90;
+}

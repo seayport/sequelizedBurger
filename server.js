@@ -6,7 +6,7 @@ var path = require("path");
 
 // Create instance of express app.
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -36,7 +36,7 @@ var routes = require("./controllers/burgers_controller.js");
 app.use("/", routes);
 
 //app.listen(port);
-db.sequelize.sync({})
+db.sequelize.sync()
 				
 		.then(function() {
 

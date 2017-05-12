@@ -8,6 +8,7 @@
     <div class="form-group">
     <label for="add"></label>
     <input type="text" id="add" name="burger_name">
+    <input type="hidden" name="devoured" value="0">
   </div>
 
   <button type="submit">Add Burger</button>
@@ -27,11 +28,11 @@
               <h3 class="panel-title"><strong>Burgers to eat!</strong></h3>
             </div>
             <div class="panel-body">
-            <ul>
-             {{#each sequelburger}}
+            <ol>
+             {{#each sequelburgers}}
              {{#unless this.devoured}}
                <li>
-              {{this.name}}
+             {{this.burger_name}}
                 <form action="/{{this.id}}?_method=PUT" method="POST">
               <input type="hidden" name="devoured" value="true">
              <button type="submit">Devour it!</button>
@@ -39,7 +40,7 @@
                </li>
               {{/unless}}
              {{/each}}
-            </ul>
+            </ol>
            </div>
           </div>
         </div>            
@@ -52,19 +53,19 @@
               <h4 class="panel-title"><strong>Devoured Burgers!</strong></h4>
             </div>
             <div class="panel-body">
-              <ul>
-                {{#each sequelburger}}
+              <ol>
+                {{#each sequelburgers}}
                          {{#if this.devoured}}
-                              <li>
-                               {{this.name}}
+                              <li id="devouredBurgers">
+                              {{this.burger_name}}
 
                      <form action="/{{this.id}}?_method=PUT" method="POST">
-                    <input type="hidden" name="devoured" value="false">
+                    <input type="hidden" id = "gone" name="devoured" value="false">
                    </form>
                   </li>
                   {{/if}}
                    {{/each}}
-                </ul>
+                </ol>
  
             </div>
 <div class="col-md-3">

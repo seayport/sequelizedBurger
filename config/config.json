@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "root",
+    "password": "1107",
+    "database": "burgers_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "define": {
+        "timestamps": false
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": "1107",
+    "database": "burgers_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "define": {
+        "timestamps": false
+    }
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql",
+    "define": {
+        "timestamps": false
+    }
+  }
+}

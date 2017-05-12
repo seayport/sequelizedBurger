@@ -1,7 +1,7 @@
-USE burgers_db;
 
-INSERT INTO burgers (burger_name, devoured, createdAt) VALUES ('Vortex Burger', true, now());
-INSERT INTO burgers (burger_name, createdAt) VALUES ('Classic Coronary', now());
-INSERT INTO burgers (burger_name, createdAt) VALUES ('Steak House', now());
-INSERT INTO burgers (burger_name, createdAt) VALUES ('Holy Guacamole', now());
-INSERT INTO burgers (burger_name, devoured, createdAt) VALUES ('Four Horsemen', true, now());
+
+INSERT INTO sequelburgers (burger_name, devoured) VALUES ('Vortex Burger', true);
+INSERT INTO sequelburgers (burger_name, devoured) VALUES ('Classic Coronary', false);
+INSERT INTO sequelburgers (burger_name, devoured) VALUES ('Steak House', true);
+INSERT INTO sequelburgers (burger_name, devoured) VALUES ('Holy Guacamole', false);
+INSERT INTO sequelburgers (burger_name, devoured) VALUES ('Four Horsemen', false);

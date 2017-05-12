@@ -1,5 +1,5 @@
 {
-  "name": "sequelizedburger",
+  "name": "sequelburgers",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",

@@ -6,7 +6,7 @@ var path = require("path");
 
 // Create instance of express app.
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -19,7 +19,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //Static directory
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(process.cwd() + "/public"));
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
@@ -36,9 +36,11 @@ var routes = require("./controllers/burgers_controller.js");
 app.use("/", routes);
 
 //app.listen(port);
-db.sequelize.sync({}).then(function() {
+db.sequelize.sync({})
+				
+		.then(function() {
 
-    app.listen(PORT, function() {
+    	app.listen(PORT, function() {
 
         console.log("App listening on PORT " + PORT);
 

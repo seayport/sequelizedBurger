@@ -2,11 +2,12 @@
       <div class="jumbotron text-center">
         <h1 class="text-center">Eat-Da-Burger!</h1>
         <h2 class="text-center">What'll ya have?</h2>
-<form class="create-update-form" action="/" method="POST">
+
+<form class="create-update-form" id="add" action="/" method="POST">
 
     <div class="form-group">
-    <label for="br"></label>
-    <input type="text" id="br" name="name">
+    <label for="add"></label>
+    <input type="text" id="add" name="burger_name">
   </div>
 
   <button type="submit">Add Burger</button>
@@ -27,10 +28,10 @@
             </div>
             <div class="panel-body">
             <ul>
-             {{#each burgers}}
+             {{#each sequelburger}}
              {{#unless this.devoured}}
                <li>
-              {{this.burger_name}}
+              {{this.name}}
                 <form action="/{{this.id}}?_method=PUT" method="POST">
               <input type="hidden" name="devoured" value="true">
              <button type="submit">Devour it!</button>
@@ -52,10 +53,10 @@
             </div>
             <div class="panel-body">
               <ul>
-                {{#each burgers}}
+                {{#each sequelburger}}
                          {{#if this.devoured}}
                               <li>
-                               {{this.burger_name}}
+                               {{this.name}}
 
                      <form action="/{{this.id}}?_method=PUT" method="POST">
                     <input type="hidden" name="devoured" value="false">
